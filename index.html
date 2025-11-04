@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到我的网站</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeIn 2s ease;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 内容区域 */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #6a11cb;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 业务展示 */
+        .services {
+            background-color: #f8f9fa;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: #6a11cb;
+            margin-bottom: 1rem;
+        }
+        
+        /* 联系方式 */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* 彩蛋区域 */
+        .easter-egg {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 10px;
+            margin-top: 3rem;
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+        
+        .easter-egg h3 {
+            color: #d63031;
+            margin-bottom: 1rem;
+        }
+        
+        .easter-egg p {
+            font-size: 1.2rem;
+            color: #636e72;
+        }
+        
+        /* 页脚 */
+        footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #6a11cb;
+        }
+        
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 特殊彩蛋触发区域 */
+        .secret-trigger {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #6a11cb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .secret-trigger:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">我的个人空间</div>
+                <ul class="nav-links">
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#services">我的业务</a></li>
+                    <li><a href="#contact">联系我</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>欢迎来到我的网站</h1>
+            <p>这里是我的个人空间，展示我的技能、业务和联系方式。很高兴你能来参观！</p>
+            <a href="#about" class="btn">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>你好，我是<span id="my-name">x</span></h3>
+                    <p>我是一名喜欢自我研究网络技术的小白。</p>
+                    <p>在我的日常生活中我比较喜欢自学编程和网安技术</p>
+                    <p>除了编程，我还喜欢摄影、旅行和阅读。</p>
+                    <div class="skills">
+                        <h4>现有掌握</h4>
+                        <ul>
+                            <li>前端开发: HTML5, CSS3, JavaScript, React, Vue</li>
+                            <li>后端开发: Node.js, Python, PHP, MySQL, MongoDB</li>
+                            <li>其他技能: kail渗透</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.3fu4ccOsTtPuPpZjkXnmlAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="我的照片">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我的业务 -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">我的现有能力</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>网站开发</h3>
+                    <p>为个人定制开发响应式网站，确保在各种设备上都有出色的用户体验。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>移动应用</h3>
+                    <p>开发iOS和Android应用，使用最新技术确保应用性能卓越、界面美观。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>技术咨询</h3>
+                    <p>为小白提供技术解决方案咨询，帮助优化现有系统或规划新的技术架构。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">联系我</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">发送消息</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>其他联系方式</h3>
+                <p>邮箱: 3532000869@qq.com</p>
+                <p>电话: 3532000869</p>
+                <p>地址: 武昌首义学院</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 彩蛋区域 -->
+    <div id="easterEgg" class="easter-egg">
+        <h3>❤️ 爱你，我的宝宝 ❤️</h3>
+        <p>你发现了我的秘密彩蛋！这是我特意为你准备的惊喜。</p>
+        <p>希望这个小小的惊喜能让你开心一整天！</p>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 我的个人网站. 保留所有权利.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">微博</a>
+                <a href="#">微信</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 彩蛋触发按钮 -->
+    <div class="secret-trigger" id="secretTrigger">❤️</div>
+
+    <!-- JavaScript -->
+    <script>
+        // 从JSON文件加载数据
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // 更新个人信息
+                document.getElementById('my-name').textContent = data.personalInfo.name;
+                
+                // 更新业务信息
+                const servicesGrid = document.querySelector('.services-grid');
+                servicesGrid.innerHTML = '';
+                
+                data.services.forEach(service => {
+                    const serviceCard = document.createElement('div');
+                    serviceCard.className = 'service-card';
+                    serviceCard.innerHTML = `
+                        <div class="service-icon">${service.icon}</div>
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                    `;
+                    servicesGrid.appendChild(serviceCard);
+                });
+                
+                // 更新联系方式
+                const contactInfo = document.querySelector('.contact-info');
+                contactInfo.innerHTML = `
+                    <h3>其他联系方式</h3>
+                    <p>邮箱: ${data.contact.email}</p>
+                    <p>电话: ${data.contact.phone}</p>
+                    <p>地址: ${data.contact.address}</p>
+                `;
+            })
+            .catch(error => console.error('Error loading data:', error));
+
+        // 表单提交处理
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('消息已发送！我会尽快回复您。');
+            this.reset();
+        });
+
+        // 彩蛋功能
+        let clickCount = 0;
+        const secretTrigger = document.getElementById('secretTrigger');
+        const easterEgg = document.getElementById('easterEgg');
+        
+        secretTrigger.addEventListener('click', function() {
+            clickCount++;
+            
+            if (clickCount === 5) {
+                easterEgg.style.display = 'block';
+                setTimeout(() => {
+                    easterEgg.style.display = 'none';
+                }, 5000);
+                clickCount = 0;
+            }
+            
+            // 按钮动画效果
+            this.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = 0;
+            document.body.style.transition = 'opacity 1s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = 1;
+            }, 100);
+        });
+    </script>
+</body>
+</html>

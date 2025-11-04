@@ -1,0 +1,30 @@
+{
+  "personalInfo": {
+    "name": "x",
+    "title": "本网站开发者",
+    "description": "我是一名喜欢自我研究网络技术的小白",
+    "hobbies": ["摄影", "旅行", "游戏"]
+  },
+  "services": [
+    {
+      "icon": "💻",
+      "title": "网站开发",
+      "description": "为个人定制开发响应式网站，确保在各种设备上都有出色的用户体验。"
+    },
+    {
+      "icon": "📱",
+      "title": "移动应用",
+      "description": "开发iOS和Android应用，使用最新技术确保应用性能卓越、界面美观。"
+    },
+    {
+      "icon": "🛠️",
+      "title": "技术咨询",
+      "description": "为小白提供技术解决方案咨询，帮助优化现有系统或规划新的技术架构。"
+    }
+  ],
+  "contact": {
+    "email": "3532000869@qq.com",
+    "phone": "3532000869",
+    "address": "武昌首义学院"
+  }
+}
