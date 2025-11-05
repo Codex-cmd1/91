@@ -3,58 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎来到我的网站</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/effects.css">
+    <title>个人主页 - 欢迎</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- 导航栏 -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">我的个人空间</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="photography.html">摄影作品</a></li>
-                    <li><a href="daily-life.html">日常生活</a></li>
-                    <li><a href="#contact">联系我</a></li>
-                </ul>
-            </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">我的空间</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">主页</a></li>
+                <li class="nav-item"><a href="photography.html" class="nav-link">摄影作品</a></li>
+                <li class="nav-item"><a href="daily.html" class="nav-link">日常生活</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">联系我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- 页面内容保持不变，但移除彩蛋区域 -->
-    
-    <!-- 隐藏彩蛋触发区域（右下角小图标） -->
-    <div class="secret-entry" id="secretEntry">
-        <div class="secret-icon">🔒</div>
-        <div class="secret-tooltip">发现秘密</div>
+    <!-- 主页内容 -->
+    <main>
+        <!-- 英雄区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>欢迎来到我的世界</h1>
+                <p>探索我的摄影作品、日常生活和隐藏的惊喜</p>
+                <div class="hero-buttons">
+                    <a href="photography.html" class="btn btn-primary">查看作品</a>
+                    <a href="daily.html" class="btn btn-secondary">日常记录</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我 -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>关于我</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>我是一个热爱生活、喜欢记录美好瞬间的摄影爱好者。通过镜头捕捉世界的美丽，用画面讲述故事。</p>
+                        <p>在日常生活中，我喜欢探索新地方、尝试新事物，并将这些经历通过照片和文字记录下来。</p>
+                    </div>
+                    <div class="about-skills">
+                        <h3>我的能力</h3>
+                        <ul>
+                            <li>摄影与后期处理</li>
+                            <li>网页设计与开发</li>
+                            <li>视觉艺术设计</li>
+                            <li>数字内容创作</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>联系我</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>email@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+86 138 0013 8000</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>中国，某城市</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 彩蛋入口 - 右下角小锁 -->
+    <div class="egg-entry">
+        <div class="egg-lock" id="eggLock">
+            <i class="fas fa-lock"></i>
+        </div>
     </div>
 
-    <!-- 密码输入模态框 -->
+    <!-- 密码模态框 -->
     <div id="passwordModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3>发现秘密通道</h3>
-            <div class="password-options">
-                <div class="password-option" data-type="family">
-                    <h4>家人秘密</h4>
-                    <p>查看我对家人的感谢和家庭照片</p>
-                </div>
-                <div class="password-option" data-type="love">
-                    <h4>爱的秘密</h4>
-                    <p>给我最爱的你的特别留言</p>
-                </div>
+            <h2>发现隐藏彩蛋</h2>
+            <p>请选择彩蛋类型并输入密码</p>
+            <div class="egg-options">
+                <button class="egg-option active" data-type="family">家人彩蛋</button>
+                <button class="egg-option" data-type="girlfriend">女友彩蛋</button>
             </div>
-            <div class="password-input-container">
-                <input type="password" id="passwordInput" placeholder="请输入密码">
-                <button id="submitPassword">进入</button>
+            <div class="password-input">
+                <input type="password" id="passwordField" placeholder="请输入密码">
+                <button id="submitPassword">确认</button>
             </div>
-            <p id="passwordHint" class="hint">提示：试试重要的日期</p>
+            <p id="passwordMessage" class="message"></p>
         </div>
     </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/secrets.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 个人主页. 所有权利保留.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-</html>>
+</html>
