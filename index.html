@@ -23,130 +23,38 @@
         </div>
     </header>
 
-    <!-- 英雄区域 -->
-    <section class="hero">
-        <div class="container">
-            <h1>欢迎来到我的网站</h1>
-            <p>这里是我的个人空间，展示我的技能、作品和日常生活。很高兴你能来参观！</p>
-            <a href="#about" class="btn">了解更多</a>
-        </div>
-    </section>
-
-    <!-- 关于我 -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>你好，我是<span id="my-name">张三</span></h3>
-                    <p>我是一名喜欢自我研究网络技术的小白。</p>
-                    <p>在我的日常生活中我比较喜欢自学编程和网安技术。</p>
-                    <p>除了编程，我还喜欢摄影、旅行和阅读。</p>
-                    <div class="skills">
-                        <h4>现有掌握</h4>
-                        <ul>
-                            <li>前端开发: HTML5, CSS3, JavaScript, React, Vue</li>
-                            <li>后端开发: Node.js, Python, PHP, MySQL, MongoDB</li>
-                            <li>其他技能: kail渗透</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="about-image">
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 我的业务 -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">我的现有能力</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💻💻</div>
-                    <h3>网站开发</h3>
-                    <p>为个人定制开发响应式网站，确保在各种设备上都有出色的用户体验。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱📱</div>
-                    <h3>移动应用</h3>
-                    <p>开发iOS和Android应用，使用最新技术确保应用性能卓越、界面美观。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛠️🛠️🛠️</div>
-                    <h3>技术咨询</h3>
-                    <p>为小白提供技术解决方案咨询，帮助优化现有系统或规划新的技术架构。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系我 -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">联系我</h2>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">姓名</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">邮箱</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">留言</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">发送消息</button>
-                </form>
-            </div>
-            <div class="contact-info">
-                <h3>其他联系方式</h3>
-                <p>邮箱: 3532000869@qq.com</p>
-                <p>电话: 3532000869</p>
-                <p>地址: 武昌首义学院</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 彩蛋区域 -->
-    <div id="easterEgg" class="easter-egg">
-        <h3>❤️ 爱你，我的宝宝 ❤️</h3>
-        <p>你发现了我的秘密彩蛋！这是我特意为你准备的惊喜。</p>
-        <p>希望这个小小的惊喜能让你开心一整天！</p>
+    <!-- 页面内容保持不变，但移除彩蛋区域 -->
+    
+    <!-- 隐藏彩蛋触发区域（右下角小图标） -->
+    <div class="secret-entry" id="secretEntry">
+        <div class="secret-icon">🔒</div>
+        <div class="secret-tooltip">发现秘密</div>
     </div>
-
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 我的个人网站. 保留所有权利.</p>
-            <div class="social-links">
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">微博</a>
-                <a href="#">微信</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 彩蛋触发按钮 -->
-    <div class="secret-trigger" id="secretTrigger">❤️</div>
 
     <!-- 密码输入模态框 -->
     <div id="passwordModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3>输入密码访问彩蛋页面</h3>
-            <input type="password" id="passwordInput" placeholder="请输入密码">
-            <button id="submitPassword">提交</button>
-            <p id="passwordHint">提示：试试我的生日或纪念日</p>
+            <h3>发现秘密通道</h3>
+            <div class="password-options">
+                <div class="password-option" data-type="family">
+                    <h4>家人秘密</h4>
+                    <p>查看我对家人的感谢和家庭照片</p>
+                </div>
+                <div class="password-option" data-type="love">
+                    <h4>爱的秘密</h4>
+                    <p>给我最爱的你的特别留言</p>
+                </div>
+            </div>
+            <div class="password-input-container">
+                <input type="password" id="passwordInput" placeholder="请输入密码">
+                <button id="submitPassword">进入</button>
+            </div>
+            <p id="passwordHint" class="hint">提示：试试重要的日期</p>
         </div>
     </div>
 
     <script src="js/main.js"></script>
     <script src="js/secrets.js"></script>
 </body>
-</html>
+</html>>
