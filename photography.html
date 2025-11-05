@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄影作品 - 我的摄影集</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏（与主页相同） -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">我的空间</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">主页</a></li>
+                <li class="nav-item"><a href="photography.html" class="nav-link active">摄影作品</a></li>
+                <li class="nav-item"><a href="daily.html" class="nav-link">日常生活</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">联系我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 摄影作品内容 -->
+    <main style="margin-top: 70px; padding: 40px 0;">
+        <div class="container">
+            <h2>我的摄影作品</h2>
+            <p style="text-align: center; margin-bottom: 30px;">记录美好瞬间，分享视觉故事</p>
+            
+            <!-- 分类筛选按钮 -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="landscape">风景</button>
+                <button class="filter-btn" data-filter="portrait">人像</button>
+                <button class="filter-btn" data-filter="street">街头</button>
+                <button class="filter-btn" data-filter="nature">自然</button>
+            </div>
+            
+            <!-- 作品网格 -->
+            <div class="photos-container">
+                <!-- 示例图片1 - 风景 -->
+                <div class="photo-item" data-category="landscape">
+                    <img src="https://picsum.photos/400/300?random=1" alt="风景摄影">
+                    <div class="photo-overlay">
+                        <h3>山间晨曦</h3>
+                        <p>拍摄于2023年10月，黄山</p>
+                    </div>
+                </div>
+                
+                <!-- 示例图片2 - 人像 -->
+                <div class="photo-item" data-category="portrait">
+                    <img src="https://picsum.photos/400/300?random=2" alt="人像摄影">
+                    <div class="photo-overlay">
+                        <h3>午后时光</h3>
+                        <p>自然光人像摄影</p>
+                    </div>
+                </div>
+                
+                <!-- 示例图片3 - 街头 -->
+                <div class="photo-item" data-category="street">
+                    <img src="https://picsum.photos/400/300?random=3" alt="街头摄影">
+                    <div class="photo-overlay">
+                        <h3>城市脉搏</h3>
+                        <p>记录都市生活瞬间</p>
+                    </div>
+                </div>
+                
+                <!-- 示例图片4 - 自然 -->
+                <div class="photo-item" data-category="nature">
+                    <img src="https://picsum.photos/400/300?random=4" alt="自然摄影">
+                    <div class="photo-overlay">
+                        <h3>林间光影</h3>
+                        <p>森林公园秋日记录</p>
+                    </div>
+                </div>
+                
+                <!-- 示例图片5 - 风景 -->
+                <div class="photo-item" data-category="landscape">
+                    <img src="https://picsum.photos/400/300?random=5" alt="风景摄影">
+                    <div class="photo-overlay">
+                        <h3>湖畔夕阳</h3>
+                        <p>日落时分的湖边美景</p>
+                    </div>
+                </div>
+                
+                <!-- 示例图片6 - 人像 -->
+                <div class="photo-item" data-category="portrait">
+                    <img src="https://picsum.photos/400/300?random=6" alt="人像摄影">
+                    <div class="photo-overlay">
+                        <h3>微笑瞬间</h3>
+                        <p>工作室人像拍摄</p>
+                    </div>
+                </div>
+                
+                <!-- 您可以继续添加更多图片 -->
+                <!-- 实际使用时，将src替换为您自己的图片路径 -->
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p>提示：将您的图片放入images文件夹，然后更新上面的img标签的src属性</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 彩蛋入口 -->
+    <div class="egg-entry">
+        <div class="egg-lock" id="eggLock">
+            <i class="fas fa-lock"></i>
+        </div>
+    </div>
+
+    <!-- 密码模态框 -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>发现隐藏彩蛋</h2>
+            <p>请选择彩蛋类型并输入密码</p>
+            <div class="egg-options">
+                <button class="egg-option active" data-type="family">家人彩蛋</button>
+                <button class="egg-option" data-type="girlfriend">女友彩蛋</button>
+            </div>
+            <div class="password-input">
+                <input type="password" id="passwordField" placeholder="请输入密码">
+                <button id="submitPassword">确认</button>
+            </div>
+            <p id="passwordMessage" class="message"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 个人主页. 所有权利保留.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
