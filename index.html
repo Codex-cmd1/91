@@ -3,150 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎来到我的网站</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/effects.css">
+    <title>个人主页 - 欢迎</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- 导航栏 -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">我的个人空间</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="photography.html">摄影作品</a></li>
-                    <li><a href="daily-life.html">日常生活</a></li>
-                    <li><a href="#contact">联系我</a></li>
-                </ul>
-            </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">我的空间</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">主页</a></li>
+                <li class="nav-item"><a href="photography.html" class="nav-link">摄影作品</a></li>
+                <li class="nav-item"><a href="daily.html" class="nav-link">日常生活</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">联系我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- 英雄区域 -->
-    <section class="hero">
-        <div class="container">
-            <h1>欢迎来到我的网站</h1>
-            <p>这里是我的个人空间，展示我的技能、作品和日常生活。很高兴你能来参观！</p>
-            <a href="#about" class="btn">了解更多</a>
-        </div>
-    </section>
+    <!-- 主页内容 -->
+    <main>
+        <!-- 英雄区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>欢迎来到我的世界</h1>
+                <p>探索我的摄影作品、日常生活和隐藏的惊喜</p>
+                <div class="hero-buttons">
+                    <a href="photography.html" class="btn btn-primary">查看作品</a>
+                    <a href="daily.html" class="btn btn-secondary">日常记录</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </section>
 
-    <!-- 关于我 -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>你好，我是<span id="my-name">张三</span></h3>
-                    <p>我是一名喜欢自我研究网络技术的小白。</p>
-                    <p>在我的日常生活中我比较喜欢自学编程和网安技术。</p>
-                    <p>除了编程，我还喜欢摄影、旅行和阅读。</p>
-                    <div class="skills">
-                        <h4>现有掌握</h4>
+        <!-- 关于我 -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>关于我</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>我是一个热爱生活、喜欢记录美好瞬间的摄影爱好者。通过镜头捕捉世界的美丽，用画面讲述故事。</p>
+                        <p>在日常生活中，我喜欢探索新地方、尝试新事物，并将这些经历通过照片和文字记录下来。</p>
+                    </div>
+                    <div class="about-skills">
+                        <h3>我的能力</h3>
                         <ul>
-                            <li>前端开发: HTML5, CSS3, JavaScript, React, Vue</li>
-                            <li>后端开发: Node.js, Python, PHP, MySQL, MongoDB</li>
-                            <li>其他技能: kail渗透</li>
+                            <li>摄影与后期处理</li>
+                            <li>网页设计与开发</li>
+                            <li>视觉艺术设计</li>
+                            <li>数字内容创作</li>
                         </ul>
                     </div>
                 </div>
-                <div class="about-image">
-                    
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 我的业务 -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">我的现有能力</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💻💻</div>
-                    <h3>网站开发</h3>
-                    <p>为个人定制开发响应式网站，确保在各种设备上都有出色的用户体验。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱📱</div>
-                    <h3>移动应用</h3>
-                    <p>开发iOS和Android应用，使用最新技术确保应用性能卓越、界面美观。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛠️🛠️🛠️</div>
-                    <h3>技术咨询</h3>
-                    <p>为小白提供技术解决方案咨询，帮助优化现有系统或规划新的技术架构。</p>
+        <!-- 联系方式 -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>联系我</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>email@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+86 138 0013 8000</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>中国，某城市</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- 联系我 -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">联系我</h2>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">姓名</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">邮箱</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">留言</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">发送消息</button>
-                </form>
-            </div>
-            <div class="contact-info">
-                <h3>其他联系方式</h3>
-                <p>邮箱: 3532000869@qq.com</p>
-                <p>电话: 3532000869</p>
-                <p>地址: 武昌首义学院</p>
-            </div>
+    <!-- 彩蛋入口 - 右下角小锁 -->
+    <div class="egg-entry">
+        <div class="egg-lock" id="eggLock">
+            <i class="fas fa-lock"></i>
         </div>
-    </section>
-
-    <!-- 彩蛋区域 -->
-    <div id="easterEgg" class="easter-egg">
-        <h3>❤️ 爱你，我的宝宝 ❤️</h3>
-        <p>你发现了我的秘密彩蛋！这是我特意为你准备的惊喜。</p>
-        <p>希望这个小小的惊喜能让你开心一整天！</p>
     </div>
 
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 我的个人网站. 保留所有权利.</p>
-            <div class="social-links">
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">微博</a>
-                <a href="#">微信</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 彩蛋触发按钮 -->
-    <div class="secret-trigger" id="secretTrigger">❤️</div>
-
-    <!-- 密码输入模态框 -->
+    <!-- 密码模态框 -->
     <div id="passwordModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3>输入密码访问彩蛋页面</h3>
-            <input type="password" id="passwordInput" placeholder="请输入密码">
-            <button id="submitPassword">提交</button>
-            <p id="passwordHint">提示：试试我的生日或纪念日</p>
+            <h2>发现隐藏彩蛋</h2>
+            <p>请选择彩蛋类型并输入密码</p>
+            <div class="egg-options">
+                <button class="egg-option active" data-type="family">家人彩蛋</button>
+                <button class="egg-option" data-type="girlfriend">女友彩蛋</button>
+            </div>
+            <div class="password-input">
+                <input type="password" id="passwordField" placeholder="请输入密码">
+                <button id="submitPassword">确认</button>
+            </div>
+            <p id="passwordMessage" class="message"></p>
         </div>
     </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/secrets.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 个人主页. 所有权利保留.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
